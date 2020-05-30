@@ -18,8 +18,8 @@ class _NavbarState extends State<Navbar> {
       type: BottomNavigationBarType.fixed,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.credit_card),
-          title: Text('Карты'),
+          icon: Icon(Icons.receipt),
+          title: Text('История'),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_circle),
