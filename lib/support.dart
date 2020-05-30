@@ -13,26 +13,36 @@ class SupportPage extends StatelessWidget {
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children:  <Widget>[
             Container(
-              height: 100,
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(10,20,10,0),
-                child: Text('Поддержка',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 60),),
-              ),
-            ),
-            SupportButton('Проблемы с товаром'),
-            SupportButton('Не посчитали товар'),
-            SupportButton('Карта магазинов'),
-            SupportButton('Связаться с нами'),
+              color: Colors.grey[100],
 
+              height: 100,
+              padding: EdgeInsets.fromLTRB(20,40,0,0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children:  <Widget>[
+                  Text('Поддержка',
+                    style: TextStyle(
+                        fontSize: 35,
+                        color: Colors.redAccent[700],
+                        fontWeight: FontWeight.bold
+                    ),),
+                ],),
+            ),
+            SizedBox( height: 50),
+            Center(
+              child: Column(children:  <Widget>[
+                SupportButton('Проблемы с товаром'),
+                SupportButton('Не посчитали товар'),
+                SupportButton('Карта магазинов'),
+                SupportButton('Связаться с нами'),
+              ],),
+            ),
           ]
         ),
       ),
-      bottomNavigationBar: Navbar(),
     );
   }
 }

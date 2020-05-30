@@ -3,6 +3,7 @@ import 'login.dart';
 import 'profile.dart';
 import 'history.dart';
 import 'support.dart';
+import 'package:prototype/Navigation.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HistoryPage(),
+      home: Navigation(),
 //      ProfilePage('Tribore','Resistance', 320),
 //      initialRoute: '/login',
 //      routes: {

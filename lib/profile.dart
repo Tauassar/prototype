@@ -24,10 +24,16 @@ class ProfilePage extends StatelessWidget {
                                 Padding(
                                 padding: EdgeInsets.fromLTRB(30, 30, 15, 15),
                                 child: CircleAvatar(
-                                  backgroundImage: AssetImage('assets/img/avatar.jpg'),
-                                  radius: 50,
+                                  radius: 54,
+                                  backgroundColor: Colors.redAccent[700],
+                                  child: CircleAvatar(
+                                    backgroundImage: AssetImage('assets/img/avatar.jpg'),
+                                    radius: 50,
+
+                                  ),
                                 ),
                               ),
+                                SizedBox( width: 10 ),
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children:  <Widget>[
@@ -64,14 +70,12 @@ class ProfilePage extends StatelessWidget {
                       const Divider(
                         color: Colors.grey,
                         thickness: 3,
-                        endIndent: 0,
                       )
                       ],
                 ),
               )
             ],),
           ),
-      bottomNavigationBar: Navbar(),
     );
   }
 }
