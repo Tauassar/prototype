@@ -12,13 +12,12 @@ class HistoryPage extends StatelessWidget {
             children:  <Widget>[
               Container(
                 color: Colors.grey[100],
-
-                height: 100,
+                height: 150,
                 padding: EdgeInsets.fromLTRB(20,40,0,0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children:  <Widget>[
-                    Text('История покупок ',
+                    Text('История\n покупок ',
                       textAlign: TextAlign.left,
                       style: TextStyle(
                           fontSize: 35,

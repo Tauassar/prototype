@@ -83,12 +83,12 @@ class CardW extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 20, top: 70.0, bottom: 4.0),
                   child: Row(children: <Widget>[
-                    Text(card.number, style: new TextStyle(fontFamily: 'Inconsolata', fontSize: 30.0,fontWeight: FontWeight.bold, color: Colors.grey[200]),),
+                    Text(card.number, style: new TextStyle(fontFamily: 'Inconsolata', fontSize: 26.0,fontWeight: FontWeight.bold, color: Colors.grey[200]),),
                     Spacer(),
                   ]),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 220, top: 10.0, bottom: 8.0),
+                  padding: const EdgeInsets.only(left: 180, top: 10.0, bottom: 8.0, right: 10),
                   child: Row(children: <Widget>[
                     RichText(
                       text: TextSpan(

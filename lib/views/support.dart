@@ -1,11 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:prototype/Navigation.dart';
+import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/Navigation.dart';
+import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/PlainText.dart';
 
 class SupportPage extends StatelessWidget {
-  String name;
-  String surname;
-  double bonus;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +15,6 @@ class SupportPage extends StatelessWidget {
           children:  <Widget>[
             Container(
               color: Colors.grey[100],
-
               height: 100,
               padding: EdgeInsets.fromLTRB(20,40,0,0),
               child: Row(
@@ -56,6 +53,7 @@ class SupportButton extends StatefulWidget {
 }
 
 class _SupportButtonState extends State<SupportButton> {
+  String sample='Most public transport systems run along fixed routes with set embarkation/disembarkation points to a prearranged timetable, with the most frequent services running to a headway (e.g.: "every 15 minutes" as opposed to being scheduled for any specific time of the day). However, most public transport trips include other modes of travel, such as passengers walking or catching bus services to access train stations.[4] Share taxis offer on-demand services in many parts of the world, which may compete with fixed public transport lines, or complement them, by bringing passengers to interchanges. Paratransit is sometimes used in areas of low demand and for people who need a door-to-door service';
   String filler;
   _SupportButtonState(this.filler);
   @override
@@ -67,7 +65,12 @@ class _SupportButtonState extends State<SupportButton> {
         highlightedBorderColor: Colors.redAccent,
             splashColor: Colors.redAccent,
             borderSide: BorderSide.none,
-            onPressed: (){},
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context)=>PlainText(filler, 'Sample Text: $sample')),
+              );
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children:  <Widget>[

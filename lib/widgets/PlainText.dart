@@ -30,16 +30,20 @@ class PlainText extends StatelessWidget {
                     ),
                   ],),
               ),
-              SizedBox( height: 50),
+              SizedBox( height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: Flexible(
-                    child: Text(text,
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Colors.grey[800],
+                child: Container(
+                  height: 480,
+                    child: ListView(
+                      children:  <Widget>[
+                      Text(text,
+                        style: TextStyle(
+                            fontSize: 22,
+                            color: Colors.grey[800],
+                        ),
                       ),
-                    ),
+                    ],),
                 ),
               ),
             ]

@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'login.dart';
-import 'profile.dart';
-import 'history.dart';
-import 'support.dart';
-import 'package:prototype/Navigation.dart';
-import 'package:prototype/CreditCard.dart';
+import 'views/login.dart';
+import 'views/profile.dart';
+import 'views/history.dart';
+import 'views/support.dart';
+import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/Navigation.dart';
+import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/CreditCard.dart';
 
 void main() {
   runApp(MyApp());
