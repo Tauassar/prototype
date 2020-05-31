@@ -1,0 +1,137 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class CreditCard{
+  final String number;
+  final String name;
+  final String  valid;
+  final code;
+
+  CreditCard(this.number, this.name, this.valid, this.code);
+
+}
+
+class CardW extends StatelessWidget {
+  List<CreditCard> cardList=[];
+  CardW(this.cardList);
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+      Container(
+        height: 240,
+        width: 650,
+        child: ListView.builder(
+            itemCount: cardList.length,
+            itemBuilder: (BuildContext context, int index)=>buildCard(context, index)
+        ),
+      ),
+        SizedBox( height: 15 ),
+        Container(
+          alignment: Alignment(0.4, 0.0),
+          child: GestureDetector(
+            onTap: (){
+//              Navigator.push(
+//                context,
+//                MaterialPageRoute(builder: (context)=>Navigation()),
+//              );
+            },
+            child: ButtonBar(
+              children: <Widget>[
+                Container(
+                  width: 250,
+                  height: 50,
+                  child: Material(
+                    borderRadius: BorderRadius.circular(20),
+                    shadowColor: Colors.redAccent[700],
+                    color: Colors.redAccent[700],
+                    elevation: 4,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('Добавить карту',
+                          style: TextStyle(fontSize: 25, color: Colors.grey[100],),),
+                        Icon(Icons.add_circle_outline,
+                          size: 30,
+                          color: Colors.grey[100],),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        )
+    ],);
+  }
+
+  Widget buildCard(BuildContext context, int index) {
+    final card = cardList[index];
+    return Container(
+      height: 240,
+      width: 650,
+      child: GestureDetector(
+        onTap: (){
+
+        },
+        child: Card(
+          color: Colors.grey[700],
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 70.0, bottom: 4.0),
+                  child: Row(children: <Widget>[
+                    Text(card.number, style: new TextStyle(fontFamily: 'Inconsolata', fontSize: 30.0,fontWeight: FontWeight.bold, color: Colors.grey[200]),),
+                    Spacer(),
+                  ]),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 220, top: 10.0, bottom: 8.0),
+                  child: Row(children: <Widget>[
+                    RichText(
+                      text: TextSpan(
+                        text: 'GOOD\n',
+                        style: TextStyle(fontSize: 8, fontFamily: 'Roboto', fontWeight: FontWeight.bold, color: Colors.white),
+                        children: <TextSpan>[
+                          TextSpan(
+                              text: 'THRU',
+                              style: TextStyle(fontSize: 8, fontFamily: 'Roboto', fontWeight: FontWeight.bold, color: Colors.white  )),
+                        ],
+                      ),
+                    ),
+                    Text(
+                        " ${card.valid}",
+                        style: TextStyle(fontSize: 20, fontFamily: 'Inconsolata', fontWeight: FontWeight.bold, color: Colors.white  )),
+                    Spacer(),
+                  ]),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 15.0, bottom: 8.0, left: 20, right: 27),
+                  child: Row(
+                    children: <Widget>[
+                      Text("${card.name}", style: new TextStyle(fontFamily: 'Inconsolata', fontSize: 20.0,fontWeight: FontWeight.bold, color: Colors.white),),
+                      Spacer(),
+                      Icon(Icons.credit_card,
+                        color: Colors.grey[200],),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AddCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
