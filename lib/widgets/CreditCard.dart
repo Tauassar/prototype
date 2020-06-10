@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'addCard.dart';
+import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/PlainText.dart';
 
 class CreditCard{
   final String number;
@@ -27,39 +29,20 @@ class CardW extends StatelessWidget {
         ),
       ),
         SizedBox( height: 15 ),
-        Container(
-          alignment: Alignment(0.4, 0.0),
-          child: GestureDetector(
-            onTap: (){
-//              Navigator.push(
-//                context,
-//                MaterialPageRoute(builder: (context)=>Navigation()),
-//              );
-            },
-            child: ButtonBar(
-              children: <Widget>[
-                Container(
-                  width: 250,
-                  height: 50,
-                  child: Material(
-                    borderRadius: BorderRadius.circular(20),
-                    shadowColor: Colors.redAccent[700],
-                    color: Colors.redAccent[700],
-                    elevation: 4,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text('Добавить карту',
-                          style: TextStyle(fontSize: 25, color: Colors.grey[100],),),
-                        Icon(Icons.add_circle_outline,
-                          size: 30,
-                          color: Colors.grey[100],),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+        RaisedButton(
+          onPressed: (){
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context)=>PlainText(filler, 'Sample Text: $sample')),
+          );},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('Добавить карту',
+                style: TextStyle(fontSize: 25, color: Colors.grey[100],),),
+              Icon(Icons.add_circle_outline,
+                size: 30,
+                color: Colors.grey[100],),
+            ],
           ),
         )
     ],);
@@ -72,7 +55,6 @@ class CardW extends StatelessWidget {
       width: 650,
       child: GestureDetector(
         onTap: (){
-
         },
         child: Card(
           color: Colors.grey[700],
@@ -124,13 +106,6 @@ class CardW extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class AddCard extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 

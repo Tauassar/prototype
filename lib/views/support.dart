@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/Navigation.dart';
 import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/PlainText.dart';
 
 class SupportPage extends StatelessWidget {
