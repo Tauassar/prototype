@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'addCard.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/PlainText.dart';
+import 'PlainText.dart';
 
 class CreditCard{
   final String number;
@@ -32,7 +32,7 @@ class CardW extends StatelessWidget {
         RaisedButton(
           onPressed: (){
             Navigator.push(context,
-            MaterialPageRoute(builder: (context)=>PlainText(filler, 'Sample Text: $sample')),
+            MaterialPageRoute(builder: (context)=>PlainText('filler', 'Sample Text: ')),
           );},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/CreditCard.dart';
+import '../widgets/CreditCard.dart';
 
 class ProfilePage extends StatelessWidget {
   String name;

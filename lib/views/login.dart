@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/Navigation.dart';
+import '../widgets/Navigation.dart';
 
 class LoginPage extends StatefulWidget {
   @override

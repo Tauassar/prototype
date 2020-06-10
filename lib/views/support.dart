@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/PlainText.dart';
+import '../widgets/PlainText.dart';
 
 class SupportPage extends StatelessWidget {
   @override

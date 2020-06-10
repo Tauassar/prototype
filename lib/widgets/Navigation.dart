@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../views/profile.dart';
 import '../views/history.dart';
 import '../views/support.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/CreditCard.dart';
+import 'CreditCard.dart';
 
 
 class Navigation extends StatefulWidget {

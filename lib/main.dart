@@ -4,8 +4,8 @@ import 'views/login.dart';
 import 'views/profile.dart';
 import 'views/history.dart';
 import 'views/support.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/Navigation.dart';
-import 'file:///C:/Users/adtsc/AndroidStudioProjects/prototype/lib/widgets/CreditCard.dart';
+import 'widgets/Navigation.dart';
+import 'widgets/CreditCard.dart';
 
 void main() {
   runApp(MyApp());
