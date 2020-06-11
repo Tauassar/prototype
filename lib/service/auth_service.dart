@@ -20,3 +20,28 @@ class AuthService {
   }
 
 }
+
+
+class EmailValidator {
+  static String validate(String value) {
+    if(value.isEmpty) {
+      return "Это поле нельзя оставлять пустым";
+    }
+    return null;
+  }
+}
+
+class PasswordValidator {
+  static String validate(String value) {
+    if(value.isEmpty) {
+      return "Это поле нельзя оставлять пустым";
+    }
+    if(value.length < 6) {
+      return "Пароль должен содердать не менее 6 символов";
+    }
+    if(value.length > 50) {
+      return "Слишком много символов для пароля";
+    }
+    return null;
+  }
+}

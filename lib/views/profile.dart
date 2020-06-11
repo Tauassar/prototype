@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../widgets/CreditCard.dart';
+import '../widgets/provider_widget.dart';
+import '../widgets/PlainText.dart';
+import '../service/auth_service.dart';
 
 class ProfilePage extends StatelessWidget {
   String name;
@@ -51,9 +54,18 @@ class ProfilePage extends StatelessWidget {
                                         ),
                                     ],),
                                   IconButton(
+                                      onPressed: () async {
+                                        try {
+                                          AuthService auth = Provider.of(context).auth;
+                                          await auth.signOut();
+                                          print("Signed Out!");
+                                        } catch (e) {
+                                          print (e);
+                                        }
+                                      },
                                       alignment: Alignment.centerRight,
                                       padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                      icon: Icon(Icons.settings), onPressed: null),
+                                      icon: Icon(Icons.settings)),
                                   ],),
                           ],),
                   ),
@@ -77,6 +89,26 @@ class ProfilePage extends StatelessWidget {
                         thickness: 3,
                       ),
                       CardW(cardList),
+                      SizedBox( height: 15 ),
+                      RaisedButton(
+                        color: Colors.redAccent[700],
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30.0)),
+                        onPressed: (){
+                          Navigator.push(context,
+                            MaterialPageRoute(builder: (context)=>PlainText('filler', 'Sample Text: ')),
+                          );},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text('Добавить карту',
+                              style: TextStyle(fontSize: 25, color: Colors.grey[100],),),
+                            Icon(Icons.add_circle_outline,
+                              size: 30,
+                              color: Colors.grey[100],),
+                          ],
+                        ),
+                      )
                       ],
                 ),
               )

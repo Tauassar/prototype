@@ -28,23 +28,7 @@ class CardW extends StatelessWidget {
             itemBuilder: (BuildContext context, int index)=>buildCard(context, index)
         ),
       ),
-        SizedBox( height: 15 ),
-        RaisedButton(
-          onPressed: (){
-            Navigator.push(context,
-            MaterialPageRoute(builder: (context)=>PlainText('filler', 'Sample Text: ')),
-          );},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Добавить карту',
-                style: TextStyle(fontSize: 25, color: Colors.grey[100],),),
-              Icon(Icons.add_circle_outline,
-                size: 30,
-                color: Colors.grey[100],),
-            ],
-          ),
-        )
+
     ],);
   }
 
