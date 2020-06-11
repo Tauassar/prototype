@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'views/login.dart';
+import 'service/auth_service.dart';
 import 'views/profile.dart';
 import 'views/history.dart';
 import 'views/support.dart';
+import 'widgets/provider_widget.dart';
 import 'widgets/Navigation.dart';
-import 'widgets/CreditCard.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,14 +16,37 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return Provider(
+      auth: AuthService(),
+      child: MaterialApp(
+        title: "Prototype App",
 //      home: Navigation(),
 //      home: ProfilePage('Tribore','Resistance', 320, cardList),
-      home: LoginPage(),
+        home: HomeController(),
 //      initialRoute: '/login',
-//      routes: {
-//        '/login':(context) => LoginPage(),
-//      },
+      routes: {
+        '/login': (BuildContext context) => LoginPage(),
+        '/home': (BuildContext context) => HomeController(),
+      },
+      ),
+    );
+  }
+}
+
+
+class HomeController extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final AuthService auth = Provider.of(context).auth;
+    return StreamBuilder<String>(
+      stream: auth.onAuthStateChanged,
+      builder: (context, AsyncSnapshot<String> snapshot) {
+        if (snapshot.connectionState == ConnectionState.active) {
+          final bool signedIn = snapshot.hasData;
+          return signedIn ? Navigation() : LoginPage();
+        }
+        return CircularProgressIndicator();
+      },
     );
   }
 }
