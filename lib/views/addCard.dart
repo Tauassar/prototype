@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prototype/widgets/provider_widget.dart';
-import '../widgets/CreditCard.dart';
+import 'package:prototype/widgets/CreditCard.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import '../service/auth_service.dart';
 
 class AddCard extends StatefulWidget {
 
@@ -413,4 +412,11 @@ class AddCardForm extends StatelessWidget {
       ),
     );
   }
+}
+
+
+
+class AlwaysDisabledFocusNode extends FocusNode {
+  @override
+  bool get hasFocus => false;
 }

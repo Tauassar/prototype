@@ -4,7 +4,7 @@ import 'views/login.dart';
 import 'service/auth_service.dart';
 import 'views/profile.dart';
 import 'views/history.dart';
-import 'views/addCard.dart';
+import 'package:prototype/widgets/history_widget.dart';
 import 'widgets/provider_widget.dart';
 import 'widgets/Navigation.dart';
 
@@ -13,17 +13,16 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return Provider(
       auth: AuthService(),
       child: MaterialApp(
         title: "Prototype App",
-//        home: Navigation(),
-//        home: AddCard(),
-        home: HomeController(),
-        initialRoute: '/login',
+        home: Navigation(),
+//        home: HistoryPage(),
+//        home: HomeController(),
+//        initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => LoginPage(),
         '/home': (BuildContext context) => HomeController(),

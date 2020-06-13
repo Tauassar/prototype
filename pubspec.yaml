@@ -26,6 +26,7 @@ dependencies:
 
   cloud_firestore: ^0.13.6
   auto_size_text: ^2.1.0
+  intl: ^0.16.1
   firebase_auth: ^0.16.1
 
 
