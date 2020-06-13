@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../views/profile.dart';
 import '../views/history.dart';
 import '../views/support.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'CreditCard.dart';
 
 
@@ -13,10 +14,10 @@ class Navigation extends StatefulWidget {
 
 class _NavigationState extends State<Navigation> {
   static List<CreditCard> cardList=[
-    CreditCard('4000 1234 5678 9001', 'Tribore Resistance','09/22', 302),
-    CreditCard('4000 1234 5678 9001', 'Tribore Resistance','09/22', 302),
-    CreditCard('4000 1234 5678 9001', 'Tribore Resistance','09/22', 302),
-    CreditCard('4000 1234 5678 9001', 'Tribore Resistance','09/22', 302),
+    CreditCard('4000 1234 5678 9031', 'Tribor Resistance','09/22', '302'),
+    CreditCard('4000 1234 5678 9011', 'Tribore Resistance','09/22', '302'),
+    CreditCard('4000 1234 5678 9111', 'Triboree Resistance','09/22', '302'),
+    CreditCard('4000 1234 5678 1111', 'Triboreee Resistance','09/22', '302'),
   ];
     int _currentIndex=1;
 
@@ -24,7 +25,7 @@ class _NavigationState extends State<Navigation> {
 
     final List<Widget> _children=[
       HistoryPage(),
-      ProfilePage('Tribore','Resistance', 320, cardList),
+      ProfilePage(),
       SupportPage(),
     ];
     void Selection(int index){

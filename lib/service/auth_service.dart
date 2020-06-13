@@ -7,6 +7,11 @@ class AuthService {
         (FirebaseUser user) => user?.uid,
   );
 
+//  get current user UID
+  Future<String> getCurrentUID() async {
+    return (await _firebaseAuth.currentUser()).uid;
+  }
+
   // Email & Password Sign In
   Future<String> signInWithEmailAndPassword(
       String email, String password) async {

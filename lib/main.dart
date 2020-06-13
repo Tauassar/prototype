@@ -4,7 +4,7 @@ import 'views/login.dart';
 import 'service/auth_service.dart';
 import 'views/profile.dart';
 import 'views/history.dart';
-import 'views/support.dart';
+import 'views/addCard.dart';
 import 'widgets/provider_widget.dart';
 import 'widgets/Navigation.dart';
 
@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
       auth: AuthService(),
       child: MaterialApp(
         title: "Prototype App",
-//      home: Navigation(),
-//      home: ProfilePage('Tribore','Resistance', 320, cardList),
+//        home: Navigation(),
+//        home: AddCard(),
         home: HomeController(),
-//      initialRoute: '/login',
+        initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => LoginPage(),
         '/home': (BuildContext context) => HomeController(),

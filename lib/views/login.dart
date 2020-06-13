@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../widgets/Navigation.dart';
 import '../service/auth_service.dart';
 import '../widgets/provider_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -32,7 +31,6 @@ class _LoginPageState extends State<LoginPage> {
         print("Signed In with ID $uid");
         Navigator.of(context).pushReplacementNamed('/home');
       } catch (e) {
-        print(e);
         setState(() {
           _error = e.message;
         });
@@ -196,44 +194,48 @@ class _LoginPageState extends State<LoginPage> {
       final _height = MediaQuery.of(context).size.height;
       return Scaffold(
         backgroundColor: Colors.grey[100],
-        body: Container(
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                colorFilter: ColorFilter.mode(
-                    Colors.black.withOpacity(0.25), BlendMode.dstATop),
-                image: AssetImage('assets/img/bg1.jpg'),
-                fit: BoxFit.cover,
-              )
-          ),
-          child: SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: <Widget>[
+        body: SafeArea(
+          child: Container(
+            height: _height,
+            width: _width,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      Colors.black.withOpacity(0.25), BlendMode.dstATop),
+                  image: AssetImage('assets/img/bg1.jpg'),
+                  fit: BoxFit.cover,
+                )
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  SizedBox(
+                      height: _height*0.1,
+                      child: showAlert()),
                 SizedBox(
-                    height: _height*0.1,
-                    child: showAlert()),
-              SizedBox(
-                height: _height*0.1),
-                mainTitle(context),
-                textFields(context),
-                SizedBox(height: 30),
-                Container(
-                  alignment: Alignment(0.7, 0.0),
-                  child: Text('Забыли пароль?',
-                    style: TextStyle(
-                        color: Colors.lightBlue,
-                        fontSize: 17,
-                        decoration: TextDecoration.underline
+                  height: _height*0.1),
+                  mainTitle(context),
+                  textFields(context),
+                  SizedBox(height: 30),
+                  Container(
+                    alignment: Alignment(0.7, 0.0),
+                    child: Text('Забыли пароль?',
+                      style: TextStyle(
+                          color: Colors.lightBlue,
+                          fontSize: 17,
+                          decoration: TextDecoration.underline
+                      ),
                     ),
                   ),
-                ),
-                SizedBox(height: 50),
-                Container(
-                  width: 200,
-                  height: 50,
-                  child: confirmButton(context),
-                ),
-              ],
+                  SizedBox(height: 50),
+                  Container(
+                    width: 200,
+                    height: 50,
+                    child: confirmButton(context),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
