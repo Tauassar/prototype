@@ -19,10 +19,10 @@ class MyApp extends StatelessWidget {
       auth: AuthService(),
       child: MaterialApp(
         title: "Prototype App",
-        home: Navigation(),
+//        home: Navigation(),
 //        home: HistoryPage(),
-//        home: HomeController(),
-//        initialRoute: '/login',
+        home: HomeController(),
+        initialRoute: '/login',
       routes: {
         '/login': (BuildContext context) => LoginPage(),
         '/home': (BuildContext context) => HomeController(),

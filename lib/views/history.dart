@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,34 +20,21 @@ class HistoryPage extends StatelessWidget {
             children:  <Widget>[
               Container(
                 color: Colors.grey[100],
-                height: 150,
-                padding: EdgeInsets.fromLTRB(20,40,0,0),
+                height: 90,
+                padding: EdgeInsets.fromLTRB(20,20,0,20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children:  <Widget>[
-                    Text('История\n покупок ',
+                    AutoSizeText('История покупок ',
                       textAlign: TextAlign.left,
                       style: TextStyle(
-                          fontSize: 35,
+                          fontSize: 25,
                           color: Colors.redAccent[700],
                         fontWeight: FontWeight.bold
                       ),),
-                    GestureDetector(
-                      onTap: ()async{
-                        final uid = await Provider.of(context).auth.getCurrentUID();
-                        Random rand=Random();
-                        double a=rand.nextInt(45000).toDouble()+5000;
-                        double percent=a/100;
-                        await db.collection('UserData').document(uid).collection('history').add({
-                          'cashback': percent.toString(),
-                          'date': DateTime.now(),
-                          'sum': a.toString(),
-                        });
-                      },
-                      child: Icon(Icons.credit_card,
-                      color: Colors.redAccent[700],
-                      size: 40,),
-                    ),
+                    Icon(Icons.credit_card,
+                    color: Colors.redAccent[700],
+                    size: 40,),
                 ],),
               ),
               Container(

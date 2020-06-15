@@ -31,12 +31,12 @@ class ProfilePage extends StatelessWidget {
               StreamBuilder(
                 stream: getUserDataStreamSnapshots(context),
                 builder: (context, snapshot) {
+                  if(!snapshot.hasData) return const Text("Loading...");
                   Map<String, dynamic> dataPersonal = snapshot.data.data;
                   name=dataPersonal['name'];
                   surname=dataPersonal['surname'];
                   avatarURL=dataPersonal['avatarURL'];
                   bonus=dataPersonal['bonus'];
-//                  if(!snapshot.hasData) return const Text("Loading...");
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
@@ -82,7 +82,7 @@ class ProfilePage extends StatelessWidget {
                                           },
                                           alignment: Alignment.centerRight,
                                           padding: EdgeInsets.fromLTRB(0, 0, 20, 0),
-                                          icon: Icon(Icons.settings)),
+                                          icon: Icon(Icons.exit_to_app)),
                                       ],),
                               ],),
                       ),

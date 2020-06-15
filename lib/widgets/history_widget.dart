@@ -19,7 +19,7 @@ class historyWidget extends StatelessWidget {
     final _height = MediaQuery.of(context).size.height;
 
     return Container(
-      height: _height-48-150-46,
+      height: _height-48-150-46+60,
       width: _width,
       child: StreamBuilder(
           stream: getUsersHistoryStreamSnapshots(context),
@@ -52,7 +52,7 @@ class historyTile extends StatelessWidget {
 
   BoxDecoration TileBoxDecoration() {
     return BoxDecoration(
-      color: Colors.amber,
+      color: Colors.grey[700],
       border: Border(
         top: BorderSide(
           color: Colors.grey[300],
